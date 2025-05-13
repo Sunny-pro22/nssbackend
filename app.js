@@ -136,8 +136,11 @@ app.get('/api/active-event', (req, res) => {
 app.post('/admin/login', async (req, res) => {
   try {
     const { passcode } = req.body;
+    console.log(req.body)
+    console.log(process.env.ADMIN_PASSCODE)
     // Compare the provided passcode with the one stored in the environment
     if (passcode === process.env.ADMIN_PASSCODE) {
+      console.log("ll")
       // Generate JWT payload. You can add more data here if needed.
       const payload = { name: 'Admin', isAdmin: true };
       // Sign the token using a secret from your environment (e.g., process.env.JWT_SECRET)
