@@ -136,6 +136,7 @@ app.get('/api/active-event', (req, res) => {
   res.json(activeEvent);
 });
 app.post('/admin/login', async (req, res) => {
+  res.send(req.body)
   try {
     const { passcode } = req.body;
     res.send(req.body)
